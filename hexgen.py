@@ -25,7 +25,7 @@ def increment_hex(hex_num, inc_num):
         hex_final_space = ' ,'.join(a+b for a,b in zip(hex_final_no_space[::2], hex_final_no_space[1::2]))
 
         hex_final = hex_final_no_space + ',' + hex_final_space
-        
+
         hex_final_list.append(hex_final)
 
     write_csv(hex_final_list)
@@ -35,7 +35,7 @@ def increment_hex(hex_num, inc_num):
 def write_csv(hex_final_list):
     with open('hex_output.csv', 'wb') as fp:
         csv_writer = csv.writer(fp, dialect = 'excel', delimiter = '\n')
-        csv_writer.writerows([hex_final_list])
+        csv_writer.writerow(hex_final_list)
 
 
 if __name__ == '__main__':
