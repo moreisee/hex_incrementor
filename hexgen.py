@@ -22,13 +22,10 @@ def increment_hex(hex_num, inc_num):
         hex_num = hex(hex_num)[2:].upper()
 
         hex_final_no_space = HEX_PREFACE + hex_num
-
-        #hex_final_list.append(hex_final_no_space + ',')
-
         hex_final_space = ' ,'.join(a+b for a,b in zip(hex_final_no_space[::2], hex_final_no_space[1::2]))
 
         hex_final = hex_final_no_space + ',' + hex_final_space
-
+        
         hex_final_list.append(hex_final)
 
     write_csv(hex_final_list)
