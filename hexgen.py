@@ -5,22 +5,26 @@
 
 import csv
 
+HEX_PREFACE = '64BABD'
+
 
 def increment_hex(hex_num, inc_num):
 
     hex_final_list = []
 
     try:
-        hex_num = hex_num.replace(';', '')
+        hex_num = hex_num.replace(':', '')
     except:
         pass
 
     for n in range(int(inc_num)):
         hex_num = int(hex_num, 16) + 1
         hex_num = hex(hex_num)[2:].upper()
-        #hex_final = ';'.join(a+b for a,b in zip(hex_num[::2], hex_num[1::2]))
+        #hex_final = ':'.join(a+b for a,b in zip(hex_num[::2], hex_num[1::2]))
 
-        hex_final_list.append(hex_num)
+        hex_final = HEX_PREFACE + hex_num
+
+        hex_final_list.append(hex_final)
 
     write_csv(hex_final_list)
 
