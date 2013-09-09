@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 
-import csv
 
 """Hex number incrementor"""
 
-#num = 1096208 
+import csv
 
 
 def increment_hex(hex_num, inc_num):
